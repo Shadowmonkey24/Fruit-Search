@@ -29,20 +29,7 @@ function searchHandler(e) {
   if (str.length === 0) {
     suggestions.style.display = 'none';
   } else {
-    // show the suggestions container
-    suggestions.style.display = 'block';
-    suggestions.innerHTML = '';// clear previous suggestions
-		// loop over the results and create a new li for each one
-
-    for (let i = 0; i < results.length; i++) {
-      const li = document.createElement('li');
-      li.textContent = results[i];
-      li.addEventListener('click', () => {
-        input.value = results[i];
-        suggestions.style.display = 'none';
-      });
-      suggestions.appendChild(li);
-    }
+    showSuggestions(results)
   }
 }
 
